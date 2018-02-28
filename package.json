@@ -26,6 +26,6 @@
     "standard": "^11.0.0"
   },
   "dependencies": {
-    "joi-multiaddr": "^1.0.0"
+    "joi-multiaddr": "^1.0.1"
   }
 }
