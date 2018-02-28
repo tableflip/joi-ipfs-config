@@ -80,6 +80,7 @@ test('should validate invalid start', (t) => {
 test('should validate valid pass', (t) => {
   const configs = [
     { pass: 'correctbatteryhorsestaple' },
+    { pass: '' },
     { pass: undefined }
   ]
 
@@ -89,7 +90,6 @@ test('should validate valid pass', (t) => {
 test('should validate invalid pass', (t) => {
   const configs = [
     { pass: 138 },
-    { pass: '' },
     { pass: null }
   ]
 
