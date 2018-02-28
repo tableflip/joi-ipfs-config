@@ -11,7 +11,7 @@ module.exports = (Joi) => {
       Joi.object().keys({ bits: Joi.number().integer() })
     ).allow(null),
     start: Joi.boolean(),
-    pass: Joi.string(),
+    pass: Joi.string().allow(''),
     EXPERIMENTAL: Joi.object().keys({
       pubsub: Joi.boolean(),
       sharding: Joi.boolean(),
