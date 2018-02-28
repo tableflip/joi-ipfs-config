@@ -19,9 +19,9 @@ module.exports = (Joi) => {
     }).allow(null),
     config: Joi.object().keys({
       Addresses: Joi.object().keys({
-        Swarm: Joi.array().items(Joi.multiaddr()),
-        API: Joi.multiaddr(),
-        Gateway: Joi.multiaddr()
+        Swarm: Joi.array().items(Joi.multiaddr().options({ convert: false })),
+        API: Joi.multiaddr().options({ convert: false }),
+        Gateway: Joi.multiaddr().options({ convert: false })
       }).allow(null),
       Discovery: Joi.object().keys({
         MDNS: Joi.object().keys({
@@ -32,7 +32,7 @@ module.exports = (Joi) => {
           Enabled: Joi.boolean()
         }).allow(null)
       }).allow(null),
-      Bootstrap: Joi.array().items(Joi.multiaddr().IPFS())
+      Bootstrap: Joi.array().items(Joi.multiaddr().IPFS().options({ convert: false }))
     }).allow(null),
     libp2p: Joi.object().keys({
       // TODO: schemas for libp2p modules?
